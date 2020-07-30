@@ -4,6 +4,8 @@ try:
     import datetime
     import requests
 
+    path = 'D:\\大三下\\GIS競賽\\資料蒐集\\氣象資料\\'
+
     api_raininfo = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0002-001?Authorization=CWB-E9CFB481-091B-449F-9A6A-F0EA269D8DB6'
     api_weatherinfo = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=CWB-E9CFB481-091B-449F-9A6A-F0EA269D8DB6'
 
@@ -19,9 +21,9 @@ try:
     response_weatherinfo_json = json.loads(response_weatherinfo.text)
 
     #open a json file
-    with open('D:\\大三下\\GIS競賽\\資料蒐集\\氣象資料\\Taiwan_Raininfo_data_{}.json'.format(int(date_time)), 'w') as f:
+    with open('{path}Taiwan_Raininfo_data_{date_time}.json'.format(path = path, date_time = int(date_time)), 'w') as f:
         json.dump(response_raininfo_json['records']['location'], f)
-    with open('D:\\大三下\\GIS競賽\\資料蒐集\\氣象資料\\Taiwan_Weatherinfo_data_{}.json'.format(int(date_time)), 'w') as f:
+    with open('{path}Taiwan_Weatherinfo_data_{date_time}.json'.format(path = path, date_time = int(date_time)), 'w') as f:
         json.dump(response_weatherinfo_json['records']['location'], f)
 
 except Exception as e:
