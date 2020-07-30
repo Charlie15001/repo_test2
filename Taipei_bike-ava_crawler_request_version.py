@@ -5,13 +5,8 @@
 import time
 import json
 from hashlib import sha1
-import hmac
-from wsgiref.handlers import format_date_time
-from datetime import datetime
-from time import mktime
 import base64
 from requests import request
-from hashlib import sha1
 import hmac
 from wsgiref.handlers import format_date_time
 from datetime import datetime
