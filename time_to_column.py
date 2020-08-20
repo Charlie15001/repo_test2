@@ -148,4 +148,4 @@ for i in range(station_num):
     create_files(i)
     write_files(i)
 t2 = time.time()
-print(t2-t1)
+#print(t2-t1)
